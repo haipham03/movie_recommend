@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  recommend_api:
+    tty: true
+    image: recommend_image
+    container_name: recommend_api
+    ports:
+      - "5000:5000"
+    command: bash -c "python3 app.py"
+    volumes:
+      - ${PWD}/models:/recommend/models
+  
+  retrain_module:
+    tty: true
+    image: recommend_image
+    container_name: retrain_module
+    command: bash -c "python3 main.py"
+    volumes:
+      - ${PWD}/models:/recommend/models
+  
+

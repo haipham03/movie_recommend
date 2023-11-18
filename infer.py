@@ -6,6 +6,5 @@ results = model.recommend(users=["1"])
 for result in results:
     movieId = result["movieId"]
     
-
 for i in range(len(results)):
     print(type(results[i]))

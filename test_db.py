@@ -21,8 +21,9 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-
-df = pd.read_sql('SELECT * FROM public.ratings', conn)
+print("connecting to db ...")
+df = pd.read_sql_query("SELECT * FROM public.ratings", conn)
+print("connected and pull data")
 
 model = tc.load_model("models/recommendations.model")
 

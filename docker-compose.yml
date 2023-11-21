@@ -5,11 +5,10 @@ services:
     tty: true
     image: recommend_image
     container_name: recommend_api
-    ports:
-      - "5000:5000"
     command: bash -c "python3 app.py"
     volumes:
       - ${PWD}/models:/recommend/models
+    network_mode: host
   
   retrain_module:
     tty: true
@@ -18,5 +17,6 @@ services:
     command: bash -c "python3 main.py"
     volumes:
       - ${PWD}/models:/recommend/models
+    network_mode: host
   
 

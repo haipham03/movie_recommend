@@ -16,7 +16,9 @@ RUN --mount=type=cache,target=/root/.cache \
     vim \
     tmux \
     gcc \
-    software-properties-common
+    software-properties-common \
+    libpq-dev \
+    build-essential
 
 RUN --mount=type=cache,target=/root/.cache \
     apt-get update -y \

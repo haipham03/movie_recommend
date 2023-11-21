@@ -12,7 +12,6 @@ DB_NAME = os.getenv("DB_NAME")
 DB_USER = os.getenv("DB_USER")
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 
-
 conn = psycopg2.connect(
     host=DB_HOST,
     database=DB_NAME,
@@ -22,7 +21,8 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-df = pd.read_sql('SELECT * FROM movies', conn)
+
+df = pd.read_sql('SELECT * FROM public.ratings', conn)
 
 model = tc.load_model("models/recommendations.model")
 

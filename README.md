@@ -6,3 +6,8 @@ run:
 ```
     doker compose up
 ```
+api:
+```
+    on port 500:
+    /recommend/<userID>/[numberOfmoviesToRecommend]
+```
